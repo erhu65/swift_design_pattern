@@ -2,15 +2,17 @@ class AuthenticationManager : SubjectBase {
     
     func authenticate(user:String, pass:String) -> Bool {
 
-        var result = false;
+        var nType = NotificationTypes.AUTH_FAIL;
         if (user == "bob" && pass == "secret") {
-            result = true;
+        
+            nType = NotificationTypes.AUTH_SUCCESS;
             println("User \(user) is authenticated");
         } else {
             println("Failed authentication attempt");
+        }
         
-        }
-            sendNotification(user, success: result);
-            return result;
-        }
+        sendNotification(Notification(type: nType, data: user));
+        return nType == NotificationTypes.AUTH_SUCCESS;
+        
+    }
 }

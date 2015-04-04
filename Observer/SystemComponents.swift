@@ -1,6 +1,7 @@
 class ActivityLog : Observer {
-    func notify(user: String, success: Bool) {
-        println("Auth request for \(user). Success: \(success)");
+   
+    func notify(notification:Notification) {
+        println("Auth request for \(notification.type.rawValue) " + "Success: \(notification.data!)");
     }
     
     func logActivity(activity:String) {
@@ -9,11 +10,13 @@ class ActivityLog : Observer {
 }
 
 class FileCache : Observer {
-    func notify(user: String, success: Bool) {
-        if (success) {
-                loadFiles(user);
+        
+    func notify(notification:Notification) {
+        if (notification.type == NotificationTypes.AUTH_SUCCESS) {
+            loadFiles(notification.data! as String);
         }
     }
+        
     func loadFiles(user:String) {
         println("Load files for \(user)");
     }
@@ -21,9 +24,10 @@ class FileCache : Observer {
 
 class AttackMonitor : Observer {
         
-    func notify(user: String, success: Bool) {
-        monitorSuspiciousActivity = !success;
+    func notify(notification: Notification) {
+        monitorSuspiciousActivity = (notification.type == NotificationTypes.AUTH_FAIL);
     }
+            
     var monitorSuspiciousActivity: Bool = false {
         didSet {
             println("Monitoring for attack: \(monitorSuspiciousActivity)");
