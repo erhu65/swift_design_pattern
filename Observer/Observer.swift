@@ -3,9 +3,25 @@ enum NotificationTypes : String {
     case AUTH_SUCCESS = "AUTH_SUCCESS";
     case AUTH_FAIL = "AUTH_FAIL";
 }
-struct Notification {
+class Notification {
     let type:NotificationTypes;
     let data:Any?;
+    
+    init(type:NotificationTypes, data:Any?) {
+        self.type = type; self.data = data;
+    }
+}
+
+class AuthenticationNotification: Notification {
+    init(user:String, success:Bool) {
+        super.init(type: success ? NotificationTypes.AUTH_SUCCESS : NotificationTypes.AUTH_FAIL, data: user);
+    }
+    var userName : String? {
+        return self.data? as String?;
+    }
+    var requestSuccessed : Bool {
+        return self.type == NotificationTypes.AUTH_SUCCESS;
+    }
 }
 
 protocol Observer : class {

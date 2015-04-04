@@ -11,23 +11,26 @@ class ActivityLog : Observer {
 
 class FileCache : Observer {
         
+ 
     func notify(notification:Notification) {
-        if (notification.type == NotificationTypes.AUTH_SUCCESS) {
-            loadFiles(notification.data! as String);
+        if let authNotification = notification as? AuthenticationNotification {
+            if (authNotification.requestSuccessed && authNotification.userName != nil){
+                loadFiles(authNotification.userName!);
+            }
         }
     }
+    
         
+
     func loadFiles(user:String) {
         println("Load files for \(user)");
     }
 }
 
 class AttackMonitor : Observer {
-        
-    func notify(notification: Notification) {
+    func notify(notification:Notification) {
         monitorSuspiciousActivity = (notification.type == NotificationTypes.AUTH_FAIL);
     }
-            
     var monitorSuspiciousActivity: Bool = false {
         didSet {
             println("Monitoring for attack: \(monitorSuspiciousActivity)");
