@@ -14,5 +14,5 @@ class AuthenticationManager : SubjectBase {
         sendNotification(Notification(type: nType, data: user));
         return nType == NotificationTypes.AUTH_SUCCESS;
         
-    }
+    } 
 }
