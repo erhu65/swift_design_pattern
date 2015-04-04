@@ -33,21 +33,28 @@ protocol Subject {
     func removeObserver(observer:Observer);
 }
 
+
+private class WeakObserverReference {
+    weak var observer:Observer?;
+    init(observer:Observer) {
+        self.observer = observer;
+    }
+}
 class SubjectBase : Subject{
-        private var observers = [Observer]();
+        private var observers = [WeakObserverReference]();
         private var collectionQueue = dispatch_queue_create("colQ", DISPATCH_QUEUE_CONCURRENT);
         
         func addObservers(observers: Observer...) {
             dispatch_barrier_sync(self.collectionQueue, { () in
                 for newOb in observers {
-                    self.observers.append(newOb);
+                    self.observers.append(WeakObserverReference(observer: newOb));
                 }
             });
         }
         
         func removeObserver(observer: Observer) {
-            dispatch_barrier_sync(self.collectionQueue, { () in
-                self.observers = filter(self.observers, {$0 !== observer});
+            self.observers = filter(self.observers, { weakref in
+                return weakref.observer != nil && weakref.observer !== observer;
             });
         }
         
@@ -55,7 +62,7 @@ class SubjectBase : Subject{
         func sendNotification(notification:Notification) {
             dispatch_sync(self.collectionQueue, { () in
                 for ob in self.observers {
-                    ob.notify(notification);
+                    ob.observer?.notify(notification);
                 }
             });
         }
