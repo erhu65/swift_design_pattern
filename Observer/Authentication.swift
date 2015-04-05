@@ -1,4 +1,4 @@
-class AuthenticationManager : SubjectBase {
+class AuthenticationManager : ShortLivedSubject {
     
     func authenticate(user:String, pass:String) -> Bool {
         var isSuccess = false;

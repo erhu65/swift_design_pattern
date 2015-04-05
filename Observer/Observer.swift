@@ -2,6 +2,8 @@ import Foundation;
 enum NotificationTypes : String {
     case AUTH_SUCCESS = "AUTH_SUCCESS";
     case AUTH_FAIL = "AUTH_FAIL";
+    case SUBJECT_CREATED = "SUBJECT_CREATE";
+    case SUBJECT_DESTROYED = "SUBJECT_DESTROYED";
 }
 class Notification {
     let type:NotificationTypes;

@@ -27,13 +27,28 @@ class FileCache : Observer {
     }
 }
 
-class AttackMonitor : Observer {
-    func notify(notification:Notification) {
+
+class AttackMonitor : MetaObserver {
+                
+    func notifySubjectCreated(subject: Subject) {
+        if (subject is AuthenticationManager) {
+            subject.addObservers(self);
+        }
+    }
+                
+    func notifySubjectDestroyed(subject: Subject) {
+        subject.removeObserver(self);
+    }
+                
+    func notify(notification: Notification) {
         monitorSuspiciousActivity = (notification.type == NotificationTypes.AUTH_FAIL);
     }
+                
     var monitorSuspiciousActivity: Bool = false {
         didSet {
-            println("Monitoring for attack: \(monitorSuspiciousActivity)");
+                println("Monitoring for attack: \(monitorSuspiciousActivity)");
         }
     }
 }
+
+
