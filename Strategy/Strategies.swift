@@ -10,7 +10,7 @@ class ClosureStrategy : Strategy {
     }
     
     func execute(values: [Int]) -> Int {
-    return self.closure(values);
+        return self.closure(values);
     }
 }
 
