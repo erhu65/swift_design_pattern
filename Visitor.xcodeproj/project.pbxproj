@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		667BFDB619F7BA400058A33C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFDB519F7BA400058A33C /* main.swift */; };
-		667BFDBD19F7BA530058A33C /* Ledger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFDBC19F7BA530058A33C /* Ledger.swift */; };
-		667BFDBF19F7BA840058A33C /* Memento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFDBE19F7BA840058A33C /* Memento.swift */; };
+		667BFDFD19F832B10058A33C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFDFC19F832B10058A33C /* main.swift */; };
+		667BFE0419F832C10058A33C /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFE0319F832C10058A33C /* Shapes.swift */; };
+		667BFE0619F8331B0058A33C /* Visitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFE0519F8331B0058A33C /* Visitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		667BFDB019F7BA400058A33C /* CopyFiles */ = {
+		667BFDF719F832B10058A33C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,14 +25,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		667BFDB219F7BA400058A33C /* Memento */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Memento; sourceTree = BUILT_PRODUCTS_DIR; };
-		667BFDB519F7BA400058A33C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		667BFDBC19F7BA530058A33C /* Ledger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ledger.swift; sourceTree = "<group>"; };
-		667BFDBE19F7BA840058A33C /* Memento.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Memento.swift; sourceTree = "<group>"; };
+		667BFDF919F832B10058A33C /* Visitor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Visitor; sourceTree = BUILT_PRODUCTS_DIR; };
+		667BFDFC19F832B10058A33C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		667BFE0319F832C10058A33C /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		667BFE0519F8331B0058A33C /* Visitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		667BFDAF19F7BA400058A33C /* Frameworks */ = {
+		667BFDF619F832B10058A33C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,98 +42,98 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		667BFDA919F7BA400058A33C = {
+		667BFDF019F832B10058A33C = {
 			isa = PBXGroup;
 			children = (
-				667BFDB419F7BA400058A33C /* Memento */,
-				667BFDB319F7BA400058A33C /* Products */,
+				667BFDFB19F832B10058A33C /* Visitor */,
+				667BFDFA19F832B10058A33C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		667BFDB319F7BA400058A33C /* Products */ = {
+		667BFDFA19F832B10058A33C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				667BFDB219F7BA400058A33C /* Memento */,
+				667BFDF919F832B10058A33C /* Visitor */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		667BFDB419F7BA400058A33C /* Memento */ = {
+		667BFDFB19F832B10058A33C /* Visitor */ = {
 			isa = PBXGroup;
 			children = (
-				667BFDB519F7BA400058A33C /* main.swift */,
-				667BFDBC19F7BA530058A33C /* Ledger.swift */,
-				667BFDBE19F7BA840058A33C /* Memento.swift */,
+				667BFDFC19F832B10058A33C /* main.swift */,
+				667BFE0319F832C10058A33C /* Shapes.swift */,
+				667BFE0519F8331B0058A33C /* Visitor.swift */,
 			);
-			path = Memento;
+			path = Visitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		667BFDB119F7BA400058A33C /* Memento */ = {
+		667BFDF819F832B10058A33C /* Visitor */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 667BFDB919F7BA400058A33C /* Build configuration list for PBXNativeTarget "Memento" */;
+			buildConfigurationList = 667BFE0019F832B10058A33C /* Build configuration list for PBXNativeTarget "Visitor" */;
 			buildPhases = (
-				667BFDAE19F7BA400058A33C /* Sources */,
-				667BFDAF19F7BA400058A33C /* Frameworks */,
-				667BFDB019F7BA400058A33C /* CopyFiles */,
+				667BFDF519F832B10058A33C /* Sources */,
+				667BFDF619F832B10058A33C /* Frameworks */,
+				667BFDF719F832B10058A33C /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Memento;
-			productName = Memento;
-			productReference = 667BFDB219F7BA400058A33C /* Memento */;
+			name = Visitor;
+			productName = Visitor;
+			productReference = 667BFDF919F832B10058A33C /* Visitor */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		667BFDAA19F7BA400058A33C /* Project object */ = {
+		667BFDF119F832B10058A33C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Apress;
 				TargetAttributes = {
-					667BFDB119F7BA400058A33C = {
+					667BFDF819F832B10058A33C = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
 			};
-			buildConfigurationList = 667BFDAD19F7BA400058A33C /* Build configuration list for PBXProject "Memento" */;
+			buildConfigurationList = 667BFDF419F832B10058A33C /* Build configuration list for PBXProject "Visitor" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 667BFDA919F7BA400058A33C;
-			productRefGroup = 667BFDB319F7BA400058A33C /* Products */;
+			mainGroup = 667BFDF019F832B10058A33C;
+			productRefGroup = 667BFDFA19F832B10058A33C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				667BFDB119F7BA400058A33C /* Memento */,
+				667BFDF819F832B10058A33C /* Visitor */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		667BFDAE19F7BA400058A33C /* Sources */ = {
+		667BFDF519F832B10058A33C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				667BFDBF19F7BA840058A33C /* Memento.swift in Sources */,
-				667BFDBD19F7BA530058A33C /* Ledger.swift in Sources */,
-				667BFDB619F7BA400058A33C /* main.swift in Sources */,
+				667BFDFD19F832B10058A33C /* main.swift in Sources */,
+				667BFE0619F8331B0058A33C /* Visitor.swift in Sources */,
+				667BFE0419F832C10058A33C /* Shapes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		667BFDB719F7BA400058A33C /* Debug */ = {
+		667BFDFE19F832B10058A33C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -174,7 +174,7 @@
 			};
 			name = Debug;
 		};
-		667BFDB819F7BA400058A33C /* Release */ = {
+		667BFDFF19F832B10058A33C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,14 +208,14 @@
 			};
 			name = Release;
 		};
-		667BFDBA19F7BA400058A33C /* Debug */ = {
+		667BFE0119F832B10058A33C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		667BFDBB19F7BA400058A33C /* Release */ = {
+		667BFE0219F832B10058A33C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -225,24 +225,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		667BFDAD19F7BA400058A33C /* Build configuration list for PBXProject "Memento" */ = {
+		667BFDF419F832B10058A33C /* Build configuration list for PBXProject "Visitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				667BFDB719F7BA400058A33C /* Debug */,
-				667BFDB819F7BA400058A33C /* Release */,
+				667BFDFE19F832B10058A33C /* Debug */,
+				667BFDFF19F832B10058A33C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		667BFDB919F7BA400058A33C /* Build configuration list for PBXNativeTarget "Memento" */ = {
+		667BFE0019F832B10058A33C /* Build configuration list for PBXNativeTarget "Visitor" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				667BFDBA19F7BA400058A33C /* Debug */,
-				667BFDBB19F7BA400058A33C /* Release */,
+				667BFE0119F832B10058A33C /* Debug */,
+				667BFE0219F832B10058A33C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 667BFDAA19F7BA400058A33C /* Project object */;
+	rootObject = 667BFDF119F832B10058A33C /* Project object */;
 }
