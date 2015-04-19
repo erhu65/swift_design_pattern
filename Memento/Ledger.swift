@@ -10,50 +10,56 @@ class LedgerEntry {
     }
 }
 
-class LedgerCommand {
+class LedgerMemento : Memento {
     
-    private let instructions:Ledger -> Void;
-    private let receiver:Ledger;
+    private let entries = [LedgerEntry]();
+    private let total:Float;
+    private let nextId:Int;
     
-    init(instructions:Ledger -> Void, receiver:Ledger) {
-        self.instructions = instructions; self.receiver = receiver;
+    init(ledger:Ledger) {
+        self.entries = ledger.entries.values.array;
+        self.total = ledger.total;
+        self.nextId = ledger.nextId;
     }
     
-    func execute() {
-        self.instructions(self.receiver);
+    func apply(ledger:Ledger) {
+        ledger.total = self.total;
+        ledger.nextId = self.nextId;
+        ledger.entries.removeAll(keepCapacity: true);
+        for entry in self.entries {
+            ledger.entries[entry.id] = entry;
+        }
     }
 }
 
-class Ledger {
+class Ledger : Originator {
             
-        private var entries = [Int:LedgerEntry]();
-        private var nextId = 1;
-        var total:Float = 0;
+            private var entries = [Int:LedgerEntry]();
+            private var nextId = 1;
+            var total:Float = 0;
+            func addEntry(counterParty:String, amount:Float) {
+                let entry = LedgerEntry(id: nextId++, counterParty: counterParty, amount: amount);
+                entries[entry.id] = entry;
+                    total += amount;
+            }
             
-        func addEntry(counterParty:String, amount:Float) -> LedgerCommand {
-            let entry = LedgerEntry(id: nextId++, counterParty: counterParty, amount: amount);
-            entries[entry.id] = entry;
-            total += amount;
-            return createUndoCommand(entry);
-        }
+            func createMemento() -> Memento {
+                return LedgerMemento(ledger: self);
+            }
             
-        private func createUndoCommand(entry:LedgerEntry) -> LedgerCommand {
-            return LedgerCommand(instructions: {target in
-                let removed = target.entries.removeValueForKey(entry.id);
-                if (removed != nil) {
-                    target.total -= removed!.amount;
-                }
-            
-            }, receiver: self);
-        }
-        
-        func printEntries() {
-            for id in entries.keys.array.sorted(<) {
-                if let entry = entries[id] {
-                    println("#\(id): \(entry.counterParty) $\(entry.amount)");
+            func applyMemento(memento: Memento) {
+                if let m = memento as? LedgerMemento {
+                    m.apply(self);
                 }
             }
-            println("Total: $\(total)");
-            println("----");
-        }
+            
+            func printEntries() {
+                for id in entries.keys.array.sorted(<) {
+                    if let entry = entries[id] {
+                        println("#\(id): \(entry.counterParty) $\(entry.amount)");
+                    }
+                }
+                println("Total: $\(total)");
+                println("----");
+            }
 }
