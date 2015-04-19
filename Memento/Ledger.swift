@@ -12,22 +12,56 @@ class LedgerEntry {
 
 class LedgerMemento : Memento {
     
-    private let entries = [LedgerEntry]();
-    private let total:Float;
-    private let nextId:Int;
+    let jsonData:String?;
     
     init(ledger:Ledger) {
-        self.entries = ledger.entries.values.array;
-        self.total = ledger.total;
-        self.nextId = ledger.nextId;
+        self.jsonData = stringify(ledger);
     }
     
-    func apply(ledger:Ledger) {
-        ledger.total = self.total;
-        ledger.nextId = self.nextId;
-        ledger.entries.removeAll(keepCapacity: true);
-        for entry in self.entries {
-            ledger.entries[entry.id] = entry;
+    init(json:String?) {
+        self.jsonData = json;
+    }
+    
+    private func stringify(ledger:Ledger) -> String? {
+        var dict = NSMutableDictionary();
+        dict["total"] = ledger.total;
+        dict["nextId"] = ledger.nextId;
+        dict["entries"] = ledger.entries.values.array;
+        var entryArray = [NSDictionary]();
+        
+        for entry in ledger.entries.values {
+            var entryDict = NSMutableDictionary();
+            entryArray.append(entryDict);
+            entryDict["id"] = entry.id;
+            entryDict["counterParty"] = entry.counterParty;
+            entryDict["amount"] = entry.amount;
+        }
+        
+        dict["entries"] = entryArray;
+        if let jsonData = NSJSONSerialization.dataWithJSONObject(dict,
+            options: nil, error: nil) {
+            return NSString(data: jsonData, encoding: NSUTF8StringEncoding);
+        }
+        return nil;
+    }
+    
+    func apply (ledger:Ledger) {
+            
+        if let data = jsonData?.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false) {
+            if let dict = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? NSDictionary {
+        
+                ledger.total = dict["total"] as Float;
+                ledger.nextId = dict["nextId"] as Int;
+                ledger.entries.removeAll(keepCapacity: true);
+                if let entryDicts = dict["entries"] as? [NSDictionary] {
+                    for dict in entryDicts {
+                        let id = dict["id"] as Int;
+                        let counterParty = dict["counterParty"] as String;
+                        let amount = dict["amount"] as Float;
+                        ledger.entries[id] = LedgerEntry(id: id,counterParty: counterParty, amount: amount);
+                    }
+                }
+            }
         }
     }
 }
