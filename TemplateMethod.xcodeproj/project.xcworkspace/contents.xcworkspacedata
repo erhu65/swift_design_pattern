@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Visitor.xcodeproj">
+      location = "self:TemplateMethod.xcodeproj">
    </FileRef>
 </Workspace>

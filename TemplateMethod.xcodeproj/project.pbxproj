@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		667BFDFD19F832B10058A33C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFDFC19F832B10058A33C /* main.swift */; };
-		667BFE0419F832C10058A33C /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFE0319F832C10058A33C /* Shapes.swift */; };
-		667BFE0619F8331B0058A33C /* Visitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667BFE0519F8331B0058A33C /* Visitor.swift */; };
+		6690AFC419F906D900D1FEEB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6690AFC319F906D900D1FEEB /* main.swift */; };
+		6690AFCB19F906EE00D1FEEB /* Donors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6690AFCA19F906EE00D1FEEB /* Donors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		667BFDF719F832B10058A33C /* CopyFiles */ = {
+		6690AFBE19F906D900D1FEEB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,14 +24,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		667BFDF919F832B10058A33C /* Visitor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Visitor; sourceTree = BUILT_PRODUCTS_DIR; };
-		667BFDFC19F832B10058A33C /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		667BFE0319F832C10058A33C /* Shapes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
-		667BFE0519F8331B0058A33C /* Visitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Visitor.swift; sourceTree = "<group>"; };
+		6690AFC019F906D900D1FEEB /* TemplateMethod */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TemplateMethod; sourceTree = BUILT_PRODUCTS_DIR; };
+		6690AFC319F906D900D1FEEB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		6690AFCA19F906EE00D1FEEB /* Donors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Donors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		667BFDF619F832B10058A33C /* Frameworks */ = {
+		6690AFBD19F906D900D1FEEB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,98 +40,96 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		667BFDF019F832B10058A33C = {
+		6690AFB719F906D900D1FEEB = {
 			isa = PBXGroup;
 			children = (
-				667BFDFB19F832B10058A33C /* Visitor */,
-				667BFDFA19F832B10058A33C /* Products */,
+				6690AFC219F906D900D1FEEB /* TemplateMethod */,
+				6690AFC119F906D900D1FEEB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		667BFDFA19F832B10058A33C /* Products */ = {
+		6690AFC119F906D900D1FEEB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				667BFDF919F832B10058A33C /* Visitor */,
+				6690AFC019F906D900D1FEEB /* TemplateMethod */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		667BFDFB19F832B10058A33C /* Visitor */ = {
+		6690AFC219F906D900D1FEEB /* TemplateMethod */ = {
 			isa = PBXGroup;
 			children = (
-				667BFDFC19F832B10058A33C /* main.swift */,
-				667BFE0319F832C10058A33C /* Shapes.swift */,
-				667BFE0519F8331B0058A33C /* Visitor.swift */,
+				6690AFC319F906D900D1FEEB /* main.swift */,
+				6690AFCA19F906EE00D1FEEB /* Donors.swift */,
 			);
-			path = Visitor;
+			path = TemplateMethod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		667BFDF819F832B10058A33C /* Visitor */ = {
+		6690AFBF19F906D900D1FEEB /* TemplateMethod */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 667BFE0019F832B10058A33C /* Build configuration list for PBXNativeTarget "Visitor" */;
+			buildConfigurationList = 6690AFC719F906D900D1FEEB /* Build configuration list for PBXNativeTarget "TemplateMethod" */;
 			buildPhases = (
-				667BFDF519F832B10058A33C /* Sources */,
-				667BFDF619F832B10058A33C /* Frameworks */,
-				667BFDF719F832B10058A33C /* CopyFiles */,
+				6690AFBC19F906D900D1FEEB /* Sources */,
+				6690AFBD19F906D900D1FEEB /* Frameworks */,
+				6690AFBE19F906D900D1FEEB /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Visitor;
-			productName = Visitor;
-			productReference = 667BFDF919F832B10058A33C /* Visitor */;
+			name = TemplateMethod;
+			productName = TemplateMethod;
+			productReference = 6690AFC019F906D900D1FEEB /* TemplateMethod */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		667BFDF119F832B10058A33C /* Project object */ = {
+		6690AFB819F906D900D1FEEB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Apress;
 				TargetAttributes = {
-					667BFDF819F832B10058A33C = {
+					6690AFBF19F906D900D1FEEB = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
 			};
-			buildConfigurationList = 667BFDF419F832B10058A33C /* Build configuration list for PBXProject "Visitor" */;
+			buildConfigurationList = 6690AFBB19F906D900D1FEEB /* Build configuration list for PBXProject "TemplateMethod" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 667BFDF019F832B10058A33C;
-			productRefGroup = 667BFDFA19F832B10058A33C /* Products */;
+			mainGroup = 6690AFB719F906D900D1FEEB;
+			productRefGroup = 6690AFC119F906D900D1FEEB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				667BFDF819F832B10058A33C /* Visitor */,
+				6690AFBF19F906D900D1FEEB /* TemplateMethod */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		667BFDF519F832B10058A33C /* Sources */ = {
+		6690AFBC19F906D900D1FEEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				667BFDFD19F832B10058A33C /* main.swift in Sources */,
-				667BFE0619F8331B0058A33C /* Visitor.swift in Sources */,
-				667BFE0419F832C10058A33C /* Shapes.swift in Sources */,
+				6690AFCB19F906EE00D1FEEB /* Donors.swift in Sources */,
+				6690AFC419F906D900D1FEEB /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		667BFDFE19F832B10058A33C /* Debug */ = {
+		6690AFC519F906D900D1FEEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -174,7 +170,7 @@
 			};
 			name = Debug;
 		};
-		667BFDFF19F832B10058A33C /* Release */ = {
+		6690AFC619F906D900D1FEEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -208,14 +204,14 @@
 			};
 			name = Release;
 		};
-		667BFE0119F832B10058A33C /* Debug */ = {
+		6690AFC819F906D900D1FEEB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		667BFE0219F832B10058A33C /* Release */ = {
+		6690AFC919F906D900D1FEEB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -225,24 +221,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		667BFDF419F832B10058A33C /* Build configuration list for PBXProject "Visitor" */ = {
+		6690AFBB19F906D900D1FEEB /* Build configuration list for PBXProject "TemplateMethod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				667BFDFE19F832B10058A33C /* Debug */,
-				667BFDFF19F832B10058A33C /* Release */,
+				6690AFC519F906D900D1FEEB /* Debug */,
+				6690AFC619F906D900D1FEEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		667BFE0019F832B10058A33C /* Build configuration list for PBXNativeTarget "Visitor" */ = {
+		6690AFC719F906D900D1FEEB /* Build configuration list for PBXNativeTarget "TemplateMethod" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				667BFE0119F832B10058A33C /* Debug */,
-				667BFE0219F832B10058A33C /* Release */,
+				6690AFC819F906D900D1FEEB /* Debug */,
+				6690AFC919F906D900D1FEEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 667BFDF119F832B10058A33C /* Project object */;
+	rootObject = 6690AFB819F906D900D1FEEB /* Project object */;
 }
